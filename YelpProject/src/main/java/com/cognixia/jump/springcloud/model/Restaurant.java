@@ -18,7 +18,7 @@ public class Restaurant implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long resterurantID; 
+	private Long restaurantID; 
 	
 	@Column(name = "name")
 	private String name; 
@@ -44,10 +44,10 @@ public class Restaurant implements Serializable{
 	}
 
 
-	public Restaurant(Long resterurantID, String name, String address, String description, String style, String city,
+	public Restaurant(Long restaurantID, String name, String address, String description, String style, String city,
 			String state) {
 		super();
-		this.resterurantID = resterurantID;
+		this.restaurantID = restaurantID;
 		this.name = name;
 		this.address = address;
 		this.description = description;
@@ -57,13 +57,13 @@ public class Restaurant implements Serializable{
 	}
 
 
-	public Long getResterurantID() {
-		return resterurantID;
+	public Long getrestaurantID() {
+		return restaurantID;
 	}
 
 
-	public void setResterurantID(Long resterurantID) {
-		this.resterurantID = resterurantID;
+	public void setrestaurantID(Long restaurantID) {
+		this.restaurantID = restaurantID;
 	}
 
 
@@ -129,7 +129,7 @@ public class Restaurant implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Restaurant [resterurantID=" + resterurantID + ", name=" + name + ", address=" + address
+		return "Restaurant [restaurantID=" + restaurantID + ", name=" + name + ", address=" + address
 				+ ", description=" + description + ", style=" + style + ", city=" + city + ", state=" + state + "]";
 	} 	
 }

@@ -16,8 +16,8 @@ public class Rating implements Serializable{
 	@Column(name = "userID")
 	private Long user_id; 
 	
-	@Column(name = "resturantID")
-	private Long resturantID; 
+	@Column(name = "restaurantID")
+	private Long restaurantID; 
 	
 	@Column(name = "rating")
 	private Integer rating; 
@@ -28,10 +28,10 @@ public class Rating implements Serializable{
 	public Rating(){
 		this(-1L, 1L, 0, "N/A"); 
 	}
-	public Rating(Long user_id, Long resturantID, Integer rating, String review) {
+	public Rating(Long user_id, Long restaurantID, Integer rating, String review) {
 		super();
 		this.user_id = user_id;
-		this.resturantID = resturantID;
+		this.restaurantID = restaurantID;
 		this.rating = rating;
 		this.review = review;
 	}
@@ -47,13 +47,13 @@ public class Rating implements Serializable{
 	}
 
 
-	public Long getResturantID() {
-		return resturantID;
+	public Long getRestaurantID() {
+		return restaurantID;
 	}
 
 
-	public void setResturantID(Long resturantID) {
-		this.resturantID = resturantID;
+	public void setRestaurantID(Long restaurantID) {
+		this.restaurantID = restaurantID;
 	}
 
 
@@ -79,7 +79,7 @@ public class Rating implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Rating [user_id=" + user_id + ", resturantID=" + resturantID + ", rating=" + rating + ", review="
+		return "Rating [user_id=" + user_id + ", resturantID=" + restaurantID + ", rating=" + rating + ", review="
 				+ review + "]";
 	} 
 }
