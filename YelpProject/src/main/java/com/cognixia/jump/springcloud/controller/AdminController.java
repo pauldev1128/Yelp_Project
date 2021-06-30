@@ -1,6 +1,7 @@
 package com.cognixia.jump.springcloud.controller;
 
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cognixia.jump.springcloud.model.Restaurant;
 import com.cognixia.jump.springcloud.repository.AdminRepository;
 
 @CrossOrigin
@@ -22,8 +24,8 @@ public class AdminController {
 	
 	@CrossOrigin
 	@PatchMapping("/update/Resturant")
-	public @ResponseBody String updateResturant(@RequestBody Resturant rest) {
-		Optional<Resturant> found = service.findAllById(rest.getID());
+	public @ResponseBody String updateResturant(@RequestBody Restaurant rest) {
+		Optional<Restaurant> found = service.findAllById(rest.getrestaurantID());
 		
 		if(found.isPresent()) {
 			service.save(rest);
