@@ -17,7 +17,7 @@ public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id; 
+	private Long userId; 
 	
 	@Column(name = "name")
 	private String name; 
@@ -32,20 +32,20 @@ public class User implements Serializable{
 		this(-1L, "N/A", "N/A", "N/A");
 	}
 
-	public User(Long id, String name, String username, String password) {
+	public User(Long userId, String name, String username, String password) {
 		super();
-		this.id = id;
+		this.userId = userId;
 		this.name = name;
 		this.username = username;
 		this.password = password;
 	}
 
 	public Long getId() {
-		return id;
+		return userId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getName() {
@@ -74,6 +74,6 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + userId + ", name=" + name + ", username=" + username + ", password=" + password + "]";
 	}
 }
