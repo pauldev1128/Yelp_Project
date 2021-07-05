@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Rating implements Serializable{
@@ -13,10 +15,14 @@ public class Rating implements Serializable{
 	 */
 	private static final long serialVersionUID = -6527537147124108138L;
 	
-	@Column(name = "userID")
+	@ManyToOne
+    @JoinColumn(name = "userID")
+//	@Column(name = "userID")
 	private Long user_id; 
 	
-	@Column(name = "restaurantID")
+	@ManyToOne
+	@JoinColumn(name = "restaurantID")
+//	@Column(name = "restaurantID")
 	private Long restaurantID; 
 	
 	@Column(name = "rating")
@@ -24,6 +30,7 @@ public class Rating implements Serializable{
 	
 	@Column(name = "review")
 	private String review;
+	
 
 	public Rating(){
 		this(-1L, 1L, 0, "N/A"); 
@@ -36,46 +43,37 @@ public class Rating implements Serializable{
 		this.review = review;
 	}
 
-
 	public Long getUser_id() {
 		return user_id;
 	}
-
 
 	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
 
-
 	public Long getRestaurantID() {
 		return restaurantID;
 	}
-
 
 	public void setRestaurantID(Long restaurantID) {
 		this.restaurantID = restaurantID;
 	}
 
-
 	public Integer getRating() {
 		return rating;
 	}
-
 
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
 
-
 	public String getReview() {
 		return review;
 	}
 
-
 	public void setReview(String review) {
 		this.review = review;
 	}
-
 
 	@Override
 	public String toString() {

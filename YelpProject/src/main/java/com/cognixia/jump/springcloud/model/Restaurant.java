@@ -1,12 +1,14 @@
 package com.cognixia.jump.springcloud.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Restaurant implements Serializable{
@@ -38,6 +40,9 @@ public class Restaurant implements Serializable{
 	@Column(name = "state")
 	private String state;
 
+	@OneToMany(mappedBy = "restaurant")
+	Set<Rating> ratings;
+	
 	
 	public Restaurant() {
 		this(-1L, "N/A", "N/A", "N/A", "N/A", "N/A", "N/A");

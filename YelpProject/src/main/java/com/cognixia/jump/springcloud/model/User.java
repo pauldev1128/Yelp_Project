@@ -1,12 +1,16 @@
 package com.cognixia.jump.springcloud.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User implements Serializable{
@@ -28,11 +32,14 @@ public class User implements Serializable{
 	@Column(nullable = false)
 	private String password; 
 
+	@OneToMany(mappedBy = "user") 
+	Set<Rating> ratings; 
+	
 	public User() {
-		this(-1L, "N/A", "N/A", "N/A");
+		this(-1L, "N/A", "N/A", "N/A", new ArrayList<>());
 	}
 
-	public User(Long userId, String name, String username, String password) {
+	public User(Long userId, String name, String username, String password, List<Rating> ratings) {
 		super();
 		this.userId = userId;
 		this.name = name;
@@ -70,6 +77,14 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Set<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(Set<Rating> ratings) {
+		this.ratings = ratings;
 	}
 
 	@Override
