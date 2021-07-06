@@ -31,7 +31,6 @@ public class Rating implements Serializable{
 	@Column(name = "review")
 	private String review;
 	
-
 	public Rating(){
 		this(-1L, 1L, 0, "N/A"); 
 	}

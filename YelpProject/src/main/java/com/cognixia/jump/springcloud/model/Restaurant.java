@@ -43,7 +43,6 @@ public class Restaurant implements Serializable{
 	@OneToMany(mappedBy = "restaurant")
 	Set<Rating> ratings;
 	
-	
 	public Restaurant() {
 		this(-1L, "N/A", "N/A", "N/A", "N/A", "N/A", "N/A");
 	}
